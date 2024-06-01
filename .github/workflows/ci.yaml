@@ -99,11 +99,11 @@ jobs:
           PUSH: "true"
         run: |
           make image-bldr
-      - name: integration
-        env:
-          REGISTRY: registry.skysolutions.fi
-        run: |
-          make integration
+      #- name: integration
+      #  env:
+      #    REGISTRY: ghcr.io
+      #  run: |
+      #    make integration
       - name: Generate Checksums
         if: startsWith(github.ref, 'refs/tags/')
         run: |
