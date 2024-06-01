@@ -34,10 +34,11 @@ func (sources Sources) Validate() error {
 
 // Source describe build source to be downloaded.
 type Source struct {
-	URL         string `yaml:"url,omitempty"`
-	Destination string `yaml:"destination,omitempty"`
-	SHA256      string `yaml:"sha256,omitempty"`
-	SHA512      string `yaml:"sha512,omitempty"`
+	URL              string `yaml:"url,omitempty"`
+	Destination      string `yaml:"destination,omitempty"`
+	SHA256           string `yaml:"sha256,omitempty"`
+	SHA512           string `yaml:"sha512,omitempty"`
+	BYPASSValidation bool   `yaml:"BYPASSValidation,omitempty"`
 }
 
 // ToSHA512Sum returns in format of line expected by 'sha512sum'.
@@ -57,6 +58,10 @@ func (source *Source) Validate() error {
 
 	if source.Destination == "" {
 		multiErr = multierror.Append(multiErr, errors.New("source.destination can't be empty"))
+	}
+
+	if source.BYPASSValidation {
+		return multiErr.ErrorOrNil()
 	}
 
 	switch len(source.SHA256) {
@@ -83,6 +88,10 @@ func (source *Source) Validate() error {
 // ValidateChecksums downloads the source, validates checksums,
 // and returns actual checksums and validation error, if any.
 func (source *Source) ValidateChecksums(ctx context.Context) (string, string, error) {
+	if source.BYPASSValidation {
+		return "", "", nil
+	}
+
 	req, err := http.NewRequestWithContext(ctx, http.MethodGet, source.URL, nil)
 	if err != nil {
 		return "", "", err
