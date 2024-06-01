@@ -1,4 +1,4 @@
-module github.com/siderolabs/bldr
+module github.com/samip5/bldr
 
 go 1.22.3
 
