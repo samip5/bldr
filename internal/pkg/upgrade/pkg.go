@@ -8,8 +8,8 @@ package upgrade
 import (
 	"strings"
 
-	"github.com/siderolabs/bldr/internal/pkg/types/v1alpha1"
-	"github.com/siderolabs/bldr/internal/pkg/types/v1alpha2"
+	"github.com/samip5/bldr/internal/pkg/types/v1alpha1"
+	"github.com/samip5/bldr/internal/pkg/types/v1alpha2"
 )
 
 func convertDeps(stageNames []string, old []*v1alpha1.Dependency) v1alpha2.Dependencies {
@@ -69,13 +69,23 @@ func convertSteps(old []*v1alpha1.Step) []v1alpha2.Step {
 		}
 
 		for _, src := range step.Sources {
-			newStep.Sources = append(newStep.Sources, v1alpha2.Source(*src))
+			newStep.Sources = append(newStep.Sources, convertSource(src))
 		}
 
 		newSteps = append(newSteps, newStep)
 	}
 
 	return newSteps
+}
+
+func convertSource(old *v1alpha1.Source) v1alpha2.Source {
+	return v1alpha2.Source{
+		URL:              old.URL,
+		Destination:      old.Destination,
+		SHA256:           "",    // Set an empty string or provide a default value
+		SHA512:           "",    // Set an empty string or provide a default value
+		BYPASSValidation: false, // Set a default value for BYPASSValidation
+	}
 }
 
 func convertFinalize(old []*v1alpha1.Finalize) []v1alpha2.Finalize {

@@ -7,8 +7,8 @@ package environment
 import (
 	"fmt"
 
-	"github.com/siderolabs/bldr/internal/pkg/constants"
-	"github.com/siderolabs/bldr/internal/pkg/types"
+	"github.com/samip5/bldr/internal/pkg/constants"
+	"github.com/samip5/bldr/internal/pkg/types"
 )
 
 // Default returns default values for environment variables.

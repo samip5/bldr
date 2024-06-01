@@ -13,8 +13,8 @@ import (
 	"github.com/hashicorp/go-multierror"
 	"gopkg.in/yaml.v3"
 
-	"github.com/siderolabs/bldr/internal/pkg/constants"
-	"github.com/siderolabs/bldr/internal/pkg/types"
+	"github.com/samip5/bldr/internal/pkg/constants"
+	"github.com/samip5/bldr/internal/pkg/types"
 )
 
 // Pkg represents build instructions for a single package.

@@ -16,10 +16,10 @@ import (
 	"github.com/opencontainers/go-digest"
 	"github.com/siderolabs/gen/xslices"
 
-	"github.com/siderolabs/bldr/internal/pkg/constants"
-	"github.com/siderolabs/bldr/internal/pkg/environment"
-	"github.com/siderolabs/bldr/internal/pkg/solver"
-	"github.com/siderolabs/bldr/internal/pkg/types/v1alpha2"
+	"github.com/samip5/bldr/internal/pkg/constants"
+	"github.com/samip5/bldr/internal/pkg/environment"
+	"github.com/samip5/bldr/internal/pkg/solver"
+	"github.com/samip5/bldr/internal/pkg/types/v1alpha2"
 )
 
 const (

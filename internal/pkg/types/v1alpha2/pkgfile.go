@@ -9,7 +9,7 @@ import (
 
 	"gopkg.in/yaml.v3"
 
-	"github.com/siderolabs/bldr/internal/pkg/types"
+	"github.com/samip5/bldr/internal/pkg/types"
 )
 
 // Pkgfile describes structure of 'Pkgfile'.

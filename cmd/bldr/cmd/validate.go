@@ -15,8 +15,8 @@ import (
 	"github.com/hashicorp/go-multierror"
 	"github.com/spf13/cobra"
 
-	"github.com/siderolabs/bldr/internal/pkg/solver"
-	"github.com/siderolabs/bldr/internal/pkg/types/v1alpha2"
+	"github.com/samip5/bldr/internal/pkg/solver"
+	"github.com/samip5/bldr/internal/pkg/types/v1alpha2"
 )
 
 func validateChecksums(ctx context.Context, set solver.PackageSet, l *log.Logger) error {

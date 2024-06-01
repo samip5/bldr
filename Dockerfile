@@ -22,7 +22,7 @@ RUN markdownlint --ignore "CHANGELOG.md" --ignore "**/node_modules/**" --ignore 
 
 # base toolchain image
 FROM --platform=${BUILDPLATFORM} ${TOOLCHAIN} AS toolchain
-RUN apk --update --no-cache add bash curl build-base protoc protobuf-dev
+RUN apk --update --no-cache add bash curl build-base protoc protobuf-dev git
 
 # build tools
 FROM --platform=${BUILDPLATFORM} toolchain AS tools
@@ -56,7 +56,7 @@ RUN --mount=type=cache,target=/go/pkg go mod download
 RUN --mount=type=cache,target=/go/pkg go mod verify
 COPY ./cmd ./cmd
 COPY ./internal ./internal
-RUN --mount=type=cache,target=/go/pkg go list -mod=readonly all >/dev/null
+RUN --mount=type=cache,target=/go/pkg  go list all >/dev/null
 
 FROM tools AS embed-generate
 ARG SHA
@@ -71,7 +71,7 @@ FROM base AS integration-build
 ARG REGISTRY
 ARG USERNAME
 ARG TAG
-ARG VERSION_PKG="github.com/siderolabs/bldr/internal/pkg/constants"
+ARG VERSION_PKG="github.com/samip5/bldr/internal/pkg/constants"
 RUN --mount=type=cache,target=/root/.cache/go-build --mount=type=cache,target=/go/pkg go test -c -tags integration -ldflags "-s -w -X ${VERSION_PKG}.Version=${TAG} -X ${VERSION_PKG}.DefaultOrganization=${USERNAME} -X ${VERSION_PKG}.DefaultRegistry=${REGISTRY}" ./internal/pkg/integration
 
 # runs gofumpt
@@ -193,6 +193,6 @@ ARG TARGETARCH
 COPY --from=bldr bldr-linux-${TARGETARCH} /bldr
 COPY --from=image-fhs / /
 COPY --from=image-ca-certificates / /
-LABEL org.opencontainers.image.source https://github.com/siderolabs/bldr
+LABEL org.opencontainers.image.source=https://github.com/samip5/bldr
 ENTRYPOINT ["/bldr","frontend"]
 

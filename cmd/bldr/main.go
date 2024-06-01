@@ -5,7 +5,7 @@
 // main is the entrypoint for bldr.
 package main
 
-import "github.com/siderolabs/bldr/cmd/bldr/cmd"
+import "github.com/samip5/bldr/cmd/bldr/cmd"
 
 func main() {
 	cmd.Execute()

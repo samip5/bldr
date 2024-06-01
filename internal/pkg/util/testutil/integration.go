@@ -14,7 +14,7 @@ import (
 
 	"github.com/otiai10/copy"
 
-	"github.com/siderolabs/bldr/internal/pkg/constants"
+	"github.com/samip5/bldr/internal/pkg/constants"
 )
 
 // IntegrationTest describes single integration set (common testdata).

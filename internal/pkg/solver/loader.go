@@ -5,7 +5,7 @@
 package solver
 
 import (
-	"github.com/siderolabs/bldr/internal/pkg/types/v1alpha2"
+	"github.com/samip5/bldr/internal/pkg/types/v1alpha2"
 )
 
 // LoadResult is a result of PackageLoader.Load function.

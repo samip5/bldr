@@ -61,7 +61,7 @@ spec:
           - arg: REGISTRY
           - arg: USERNAME
           - arg: TAG
-          - arg: VERSION_PKG="github.com/siderolabs/bldr/internal/pkg/constants"
+          - arg: VERSION_PKG="github.com/samip5/bldr/internal/pkg/constants"
           - script:
               command: go test -c -tags integration -ldflags "-s -w -X ${VERSION_PKG}.Version=${TAG} -X ${VERSION_PKG}.DefaultOrganization=${USERNAME} -X ${VERSION_PKG}.DefaultRegistry=${REGISTRY}" ./internal/pkg/integration
               cache:

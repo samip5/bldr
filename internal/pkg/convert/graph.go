@@ -10,10 +10,10 @@ import (
 
 	"github.com/moby/buildkit/client/llb"
 
-	"github.com/siderolabs/bldr/internal/pkg/constants"
-	"github.com/siderolabs/bldr/internal/pkg/environment"
-	"github.com/siderolabs/bldr/internal/pkg/solver"
-	"github.com/siderolabs/bldr/internal/pkg/types/v1alpha2"
+	"github.com/samip5/bldr/internal/pkg/constants"
+	"github.com/samip5/bldr/internal/pkg/environment"
+	"github.com/samip5/bldr/internal/pkg/solver"
+	"github.com/samip5/bldr/internal/pkg/types/v1alpha2"
 )
 
 // GraphLLB wraps PackageGraph to provide LLB conversion.

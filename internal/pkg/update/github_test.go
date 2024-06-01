@@ -12,7 +12,7 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 
-	"github.com/siderolabs/bldr/internal/pkg/update"
+	"github.com/samip5/bldr/internal/pkg/update"
 )
 
 func TestLatestGithub(t *testing.T) {

@@ -9,7 +9,7 @@ import (
 
 	"github.com/moby/buildkit/client/llb"
 
-	"github.com/siderolabs/bldr/internal/pkg/types"
+	"github.com/samip5/bldr/internal/pkg/types"
 )
 
 // Options for bldr.

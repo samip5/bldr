@@ -34,7 +34,7 @@ function cherry-pick {
 
   git checkout $2
   git fetch
-  git rebase upstream/$2
+  git rebase origin/$2
   git cherry-pick -x $1
 }
 

@@ -10,8 +10,8 @@ import (
 	"github.com/moby/buildkit/client/llb"
 	"github.com/moby/buildkit/frontend/gateway/client"
 
-	"github.com/siderolabs/bldr/internal/pkg/environment"
-	"github.com/siderolabs/bldr/internal/pkg/solver"
+	"github.com/samip5/bldr/internal/pkg/environment"
+	"github.com/samip5/bldr/internal/pkg/solver"
 )
 
 // SolverFunc can be called to solve the package into the llb state via buildkit.

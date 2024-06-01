@@ -15,9 +15,9 @@ import (
 
 	"github.com/hashicorp/go-multierror"
 
-	"github.com/siderolabs/bldr/internal/pkg/constants"
-	"github.com/siderolabs/bldr/internal/pkg/types"
-	"github.com/siderolabs/bldr/internal/pkg/types/v1alpha2"
+	"github.com/samip5/bldr/internal/pkg/constants"
+	"github.com/samip5/bldr/internal/pkg/types"
+	"github.com/samip5/bldr/internal/pkg/types/v1alpha2"
 )
 
 // FilesystemPackageLoader loads packages by walking file system tree.

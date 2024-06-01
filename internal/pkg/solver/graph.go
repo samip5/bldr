@@ -9,7 +9,7 @@ import (
 
 	"github.com/emicklei/dot"
 
-	"github.com/siderolabs/bldr/internal/pkg/types/v1alpha2"
+	"github.com/samip5/bldr/internal/pkg/types/v1alpha2"
 )
 
 // PackageDependency wraps v1alpha2.Depency with resolved internal dependencies.

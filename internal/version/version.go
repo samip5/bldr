@@ -31,7 +31,7 @@ var (
 		}
 
 		// Check if siderolabs project
-		if strings.HasPrefix(info.Path, "github.com/siderolabs/") {
+		if strings.HasPrefix(info.Path, "github.com/samip5/") {
 			return info.Path[strings.LastIndex(info.Path, "/")+1:]
 		}
 

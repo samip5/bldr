@@ -22,10 +22,10 @@ import (
 	specs "github.com/opencontainers/image-spec/specs-go/v1"
 	"golang.org/x/sync/errgroup"
 
-	"github.com/siderolabs/bldr/internal/pkg/constants"
-	"github.com/siderolabs/bldr/internal/pkg/convert"
-	"github.com/siderolabs/bldr/internal/pkg/environment"
-	"github.com/siderolabs/bldr/internal/pkg/solver"
+	"github.com/samip5/bldr/internal/pkg/constants"
+	"github.com/samip5/bldr/internal/pkg/convert"
+	"github.com/samip5/bldr/internal/pkg/environment"
+	"github.com/samip5/bldr/internal/pkg/solver"
 )
 
 const (

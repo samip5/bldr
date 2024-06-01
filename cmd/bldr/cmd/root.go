@@ -12,7 +12,7 @@ import (
 
 	"github.com/spf13/cobra"
 
-	"github.com/siderolabs/bldr/internal/pkg/environment"
+	"github.com/samip5/bldr/internal/pkg/environment"
 )
 
 const defaultPlatform = (runtime.GOOS + "/" + runtime.GOARCH)

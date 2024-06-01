@@ -15,9 +15,9 @@ import (
 	"github.com/hashicorp/go-multierror"
 	"github.com/moby/buildkit/frontend/gateway/client"
 
-	"github.com/siderolabs/bldr/internal/pkg/constants"
-	"github.com/siderolabs/bldr/internal/pkg/types"
-	"github.com/siderolabs/bldr/internal/pkg/types/v1alpha2"
+	"github.com/samip5/bldr/internal/pkg/constants"
+	"github.com/samip5/bldr/internal/pkg/types"
+	"github.com/samip5/bldr/internal/pkg/types/v1alpha2"
 )
 
 // BuildkitFrontendLoader loads packages from buildkit client.Reference.

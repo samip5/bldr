@@ -20,7 +20,7 @@ can be exported as container image.
 ## Usage
 
 Given directory structure with `Pkgfile` and `pkg.yaml`
-(see [tools repository](https://github.com/siderolabs/tools) as an example),build can be triggered using following commands:
+(see [tools repository](https://github.com/samip5/tools) as an example),build can be triggered using following commands:
 
 - via `docker buildx`:
 
@@ -130,7 +130,7 @@ vars:
   TOOLCHAIN_IMAGE: ghcr.io/siderolabs/tools:v0.3.0-8-ge86a8f3
 
 labels:
-  org.opencontainers.image.source: https://github.com/siderolabs/bldr
+  org.opencontainers.image.source: https://github.com/samip5/bldr
 ```
 
 First line of the file should always be magic comment which is picked up by dockerfile frontend of buildkit and redirects build to the `bldr` frontend.

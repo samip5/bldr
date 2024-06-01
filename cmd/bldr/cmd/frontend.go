@@ -13,7 +13,7 @@ import (
 	"github.com/moby/buildkit/util/appcontext"
 	"github.com/spf13/cobra"
 
-	"github.com/siderolabs/bldr/internal/pkg/pkgfile"
+	"github.com/samip5/bldr/internal/pkg/pkgfile"
 )
 
 // frontendCmd represents the frontend command.

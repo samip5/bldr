@@ -10,7 +10,7 @@ import (
 
 	"github.com/spf13/cobra"
 
-	"github.com/siderolabs/bldr/internal/pkg/solver"
+	"github.com/samip5/bldr/internal/pkg/solver"
 )
 
 // graphCmd represents the graph command.

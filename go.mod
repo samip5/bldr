@@ -1,6 +1,12 @@
 module github.com/samip5/bldr
 
-replace github.com/siderolabs/bldr => github.com/samip5/bldr v0.4.0
+replace github.com/samip5/bldr => github.com/samip5/bldr v0.4.0
+
+replace github.com/samip5/bldr/internal/pkg/environment => ./internal/pkg/environment
+
+replace github.com/samip5/bldr/internal/pkg/constants => ./internal/pkg/constants
+
+replace github.com/samip5/bldr/internal/pkg/types/v1alpha1 => ./internal/pkg/types/v1alpha1
 
 go 1.22.3
 
@@ -16,7 +22,6 @@ require (
 	github.com/opencontainers/go-digest v1.0.0
 	github.com/opencontainers/image-spec v1.1.0
 	github.com/otiai10/copy v1.14.0
-	github.com/siderolabs/bldr v0.0.0-00010101000000-000000000000
 	github.com/siderolabs/gen v0.4.8
 	github.com/spf13/cobra v1.8.0
 	github.com/stretchr/testify v1.9.0

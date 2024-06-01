@@ -7,7 +7,7 @@ package solver
 import (
 	"fmt"
 
-	"github.com/siderolabs/bldr/internal/pkg/types/v1alpha2"
+	"github.com/samip5/bldr/internal/pkg/types/v1alpha2"
 )
 
 // Packages is a collect of Pkg objects with dependencies tracked.

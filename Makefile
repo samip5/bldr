@@ -15,7 +15,7 @@ GOARCH := $(shell uname -m | sed 's/x86_64/amd64/' | sed 's/aarch64/arm64/')
 WITH_DEBUG ?= false
 WITH_RACE ?= false
 REGISTRY ?= ghcr.io
-USERNAME ?= siderolabs
+USERNAME ?= samip5
 REGISTRY_AND_USERNAME ?= $(REGISTRY)/$(USERNAME)
 PROTOBUF_GO_VERSION ?= 1.34.1
 GRPC_GO_VERSION ?= 1.3.0
@@ -75,7 +75,7 @@ RUN_TESTS ?= TestIntegration
 
 # help menu
 
-export define HELP_MENU_HEADER
+define HELP_MENU_HEADER
 # Getting Started
 
 To build this project, you must have the following installed:

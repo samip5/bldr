@@ -9,7 +9,7 @@ package integration_test
 import (
 	"testing"
 
-	"github.com/siderolabs/bldr/internal/pkg/util/testutil"
+	"github.com/samip5/bldr/internal/pkg/util/testutil"
 )
 
 func TestIntegration(t *testing.T) {

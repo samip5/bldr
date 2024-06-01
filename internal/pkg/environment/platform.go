@@ -11,7 +11,7 @@ import (
 	"github.com/moby/buildkit/client/llb"
 	specs "github.com/opencontainers/image-spec/specs-go/v1"
 
-	"github.com/siderolabs/bldr/internal/pkg/types"
+	"github.com/samip5/bldr/internal/pkg/types"
 )
 
 // Platform describes build & target platforms.
