@@ -2,7 +2,7 @@
 commit = "HEAD"
 
 project_name = "bldr"
-github_repo = "siderolabs/bldr"
+github_repo = "samip5/bldr"
 match_deps = "^github.com/(siderolabs/[a-zA-Z0-9-]+)$"
 
 previous = "v0.2.1"
