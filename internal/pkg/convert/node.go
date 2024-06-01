@@ -222,25 +222,34 @@ func (node *NodeLLB) stepDownload(root llb.State, step v1alpha2.Step) llb.State 
 			llb.WithCustomNamef(node.Prefix+"download %s -> %s", source.URL, source.Destination),
 		)
 
-		checksummer := node.Graph.Checksummer.File(
-			llb.Mkfile("/checksums", 0o644, source.ToSHA512Sum()).
-				Copy(download, "/", "/", defaultCopyOptions(node.Graph.Options, false)).
-				Mkdir("/empty", constants.DefaultDirMode),
-			llb.WithCustomName(node.Prefix+"cksum-prepare"),
-		).Run(
-			append(node.Graph.commonRunOptions,
-				llb.Shlex("sha512sum -c --strict /checksums"),
-				llb.WithCustomName(node.Prefix+"cksum-verify"),
-			)...,
-		).Root()
+		if !source.BYPASSValidation {
+			checksummer := node.Graph.Checksummer.File(
+				llb.Mkfile("/checksums", 0o644, source.ToSHA512Sum()).
+					Copy(download, "/", "/", defaultCopyOptions(node.Graph.Options, false)).
+					Mkdir("/empty", constants.DefaultDirMode),
+				llb.WithCustomName(node.Prefix+"cksum-prepare"),
+			).Run(
+				append(node.Graph.commonRunOptions,
+					llb.Shlex("sha512sum -c --strict /checksums"),
+					llb.WithCustomName(node.Prefix+"cksum-verify"),
+				)...,
+			).Root()
 
-		stages = append(stages,
-			llb.Scratch().File(
-				llb.Copy(download, "/", step.TmpDir, defaultCopyOptions(node.Graph.Options, false)).
-					Copy(checksummer, "/empty", "/", defaultCopyOptions(node.Graph.Options, false)), // TODO: this is "fake" dependency on checksummer
-				llb.WithCustomName(node.Prefix+"download finalize"),
-			),
-		)
+			stages = append(stages,
+				llb.Scratch().File(
+					llb.Copy(download, "/", step.TmpDir, defaultCopyOptions(node.Graph.Options, false)).
+						Copy(checksummer, "/empty", "/", defaultCopyOptions(node.Graph.Options, false)), // TODO: this is "fake" dependency on checksummer
+					llb.WithCustomName(node.Prefix+"download finalize"),
+				),
+			)
+		} else {
+			stages = append(stages,
+				llb.Scratch().File(
+					llb.Copy(download, "/", step.TmpDir, defaultCopyOptions(node.Graph.Options, false)),
+					llb.WithCustomName(node.Prefix+"download finalize"),
+				),
+			)
+		}
 	}
 
 	return root.WithOutput(llb.Merge(stages, llb.WithCustomName(node.Prefix+"download")).Output())
